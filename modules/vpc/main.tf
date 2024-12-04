@@ -39,7 +39,7 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_eip" "ngw" {
   domain ="vpc"
 
-  tag ={
+  tags ={
     Name= "own vpc Public IP "
 
   }
