@@ -40,7 +40,7 @@ resource "aws_eip" "ngw" {
   domain ="vpc"
 
   tags ={
-    Name= "own vpc Public IP "
+    Name= "ngw "
 
   }
 
