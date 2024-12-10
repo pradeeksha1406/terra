@@ -31,4 +31,14 @@ module "private-alb" {
   vpc_id                  = module.vpc.vpc_id
 }
 
+module "frontend" {
+  source = "./modules/app"
+  app_port = "80"
+  component = "frontend"
+  env = var.env
+  instance_type = "t3.micro"
+  vpc_cidr = var.vpc_cidr
+  vpc_id = module.vpc.vpc_id
+}
+
 
