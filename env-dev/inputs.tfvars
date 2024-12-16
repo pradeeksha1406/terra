@@ -10,4 +10,3 @@ default_vpc_cidr ="172.31.0.0/16"
 default_route_table_id = "rtb-0e951da74feaaad43"
 bastion_node_cidr = ["172.31.93.140/32"]
 
-
