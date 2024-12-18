@@ -21,16 +21,18 @@ module "vpc" {
 #  vpc_id                 = module.vpc.vpc_id
 #}
 #
-#module "private-alb" {
-#  source                  = "./modules/alb"
-#  alb_sg_allow_cidr       = var.vpc_cidr
-#  alb_type                = "private"
-#  env                     = var.env
-#  internal                = true
-#  subnets                 = module.vpc.private_subnets
-#  vpc_id                  = module.vpc.vpc_id
-#}
-#
+module "private-alb" {
+  source                  = "./modules/alb"
+  alb_sg_allow_cidr       = var.vpc_cidr
+  alb_type                = "private"
+  env                     = var.env
+  internal                = true
+  subnets                 = module.vpc.private_subnets
+  vpc_id                  = module.vpc.vpc_id
+  dns_name                ="backend-{var.env}.techadda.co"
+  zone_id                 ="Z05654563PV59AYGYWWC"
+}
+
 #module "frontend" {
 #  source = "./modules/app"
 #  app_port = "80"
