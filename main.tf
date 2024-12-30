@@ -47,6 +47,9 @@ module "frontend" {
   vpc_id = module.vpc.vpc_id
   subnets = module.vpc.private_subnets
   bastion_node_cidr = var.bastion_node_cidr
+  desired_capacity = 2
+  max_size = 1
+  min_size = 1
 }
 
 module "backend" {
@@ -60,6 +63,9 @@ module "backend" {
   vpc_id = module.vpc.vpc_id
   subnets = module.vpc.private_subnets
   bastion_node_cidr = var.bastion_node_cidr
+  desired_capacity = 2
+  max_size = 1
+  min_size = 1
 }
 
 
