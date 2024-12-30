@@ -132,5 +132,6 @@ resource "aws_alb_target_group" "tg" {
     unhealthy_threshold = 2
     port = var.app_port
     path = "/health"
+    timeout = 3
   }
 }
