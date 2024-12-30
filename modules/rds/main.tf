@@ -41,6 +41,7 @@ resource "aws_rds_cluster" "main" {
   master_username        = data.aws_ssm_parameter.master_username.value
   master_password        = data.aws_ssm_parameter.master_password.value
   vpc_security_group_ids = [aws_security_group.main.id]
+  skip_final_snapshot    = true
 }
 resource "aws_rds_cluster_instance" "cluster_instances" {
   count              = 1
